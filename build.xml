@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="test.ant" name="terrenceryan.com" basedir=".">
+				
+	<property file="settings.properties"/>
+	
+	<target name="test.ant" description="Exports the script of the database ">
+		<echo message="Testing ant in this environment. " />
+		<echo message="basedir:     ${basedir}" />
+		<echo message="ant.version: ${ant.version}" />
+		
+	</target>
+
+	<target name="clean">
+		<echo message="Cleaning Build Space"/>
+		<delete dir="${build.dir}"/>
+	</target>
+
+
+	<target name="build" depends="clean,gitTag,copyFilesToBuild,polish,zip" description="Creating a clean copy of the site" />
+
+	<target name="deploy" depends="build,uploadFilesToProd,refreshApp,refreshCache,refreshBlog,flushServerCache" description="Sending Files to Prod" />
+
+	
+	<target name="copyFilesToBuild" description="Create a gitless version of the source code.">
+		<echo message="Copying Files to Build Location"/>
+		<copy todir="${build.dir}" preservelastmodified="true">
+			<fileset dir="${basedir}">
+				<exclude name='.gitignore'/>
+				<exclude name='.git/**'/>
+			</fileset>	
+		</copy>
+		<echo message="Clearing out Git repository"/>
+	</target>
+
+	<target name="setVersion">
+		<echo message="Generating a Build number"/>
+		
+		<buildnumber/>
+		<echo message="Build Number ${build.number} "/>
+		<property name="app.version" value="2.0.${build.number}"/>	
+		<echo message="Application Version: ${app.version} "/> 
+	</target>
+
+	<target name="polish">
+		<echo message="Removing extra files."/>
+		<delete file='${build.dir}/settings.properties'/>
+		<delete file='${build.dir}/settings.old.properties'/>
+		<delete file='${build.dir}/build.xml'/>
+		<delete file='${build.dir}/build.old.xml'/>
+		<delete file='${build.dir}/build.number'/>
+		<delete file='${build.dir}/.project'/>
+		<delete file='${build.dir}/settings.xml'/>
+		<delete file='${build.dir}/sql/cleanDatabase.sql'/>
+		<delete dir='${build.dir}/trunk'/>
+		<delete dir='${build.dir}/test'/>
+		<delete dir='${build.dir}/log'/>
+		<delete dir='${build.dir}/sql'/>
+		<delete dir='${build.dir}/scripts'/>
+		<delete dir='${build.dir}/TerryRyansORMCodeJumpstart'/>
+		
+		<echo message="Tweak ColdSpring Config File" />
+		<replace dir="${build.dir}/config/local" summary="${verbose}">
+				<include name="coldspring.xml.cfm"/>
+				<replacefilter token="$$$$$$version$$$$$$" value="${app.version}"/>
+		</replace>
+		<replace dir="${build.dir}/config/prod" summary="${verbose}">
+				<include name="coldspring.xml.cfm"/>
+				<replacefilter token="$$$$$$version$$$$$$" value="${app.version}"/>
+		</replace>
+	</target>
+
+	<target name="zip" description="Creates a zip file of the build.">
+		<echo message="Creating Zip File"/>
+		<zip destfile="${package.dir}\${app.name}.${app.version}.zip" basedir="${build.dir}"/>
+	</target>
+
+
+
+	<!-- ****************************  -->
+	<!-- GIT TASKS  -->
+	<!-- ****************************  -->
+	<target name="gitTag" description="Creates a tag" depends="setVersion">
+		<echo message="Creating Tag: ${app.version}"/>
+		
+		<exec executable="${git.exe}" spawn="false" dir="${basedir}">
+			<arg line="tag"/>
+			<arg line="${app.version}"/>
+		</exec>
+		
+	</target>
+
+
+	<!-- ****************************  -->
+	<!-- Synch TASKS  -->
+	<!-- ****************************  -->
+	<target name="synchProdToLocal" description="Pulls down local content so it matchs production" depends="importProdToLocal,retrieveBlogImages">
+		
+	</target>
+
+
+	<!-- ****************************  -->
+	<!-- FTP TASKS  -->
+	<!-- ****************************  -->
+	<target name="retrieveBlogImages" description="Retrieves images from my blog.">
+		<echo message="Pulling Blog Images from TerrenceRyan.com"/>
+		<ftp server="${ftp.server}" userid="${ftp.username}" password="${ftp.password}" preservelastmodified="yes" 
+				retriesAllowed="1" passive="yes" remotedir="/blog/assets/content" depends="yes" 
+				action="get" verbose="${verbose}" binary="yes">
+			<fileset dir="${basedir}/blog/assets/content">
+				<include name="**/*.png"/>
+				<include name="**/*.jpg"/>
+				<include name="**/*.gif"/>
+			</fileset>
+		</ftp>
+	</target>
+
+	<target name="uploadFilesToProd" description="Pushes application to production.">
+
+		<echo message="Pushing Text to TerrenceRyan.com"/>
+		<ftp server="${ftp.server}" userid="${ftp.username}" password="${ftp.password}" 
+				timediffauto="true"  retriesAllowed="1" passive="yes" remotedir="/" depends="yes" 
+				action="send" verbose="${verbose}" binary="no" timestampGranularity="MINUTE">
+			<fileset dir="${build.dir}">
+				<include name="**/*.cfm"/>
+				<include name="**/*.cfc"/>
+				<include name="**/*.css"/>
+				<include name="**/*.xml"/>
+				<include name="**/*.html"/>
+				<include name="**/*.txt"/>
+			</fileset>
+		</ftp>
+
+		<echo message="Pushing Binaries to TerrenceRyan.com"/>
+		<ftp server="${ftp.server}" userid="${ftp.username}" password="${ftp.password}" 
+			timediffauto="true"  retriesAllowed="1" passive="yes" remotedir="/" depends="yes" 
+			action="send" verbose="${verbose}" binary="yes" timestampGranularity="MINUTE">
+			<fileset dir="${build.dir}">
+				<include name="**/*.jpg*"/>
+				<include name="**/*.gif*"/>
+				<include name="**/*.pdf*"/>
+				<include name="**/*.ppt*"/>
+				<include name="**/*.png*"/>
+				<include name="**/*.zip*"/>
+				<include name="**/*.ico*"/>
+			</fileset>
+		</ftp>
+		
+	</target>
+
+
+	<!-- ****************************  -->
+	<!-- DATABASE TASKS  -->
+	<!-- ****************************  -->
+	<target name="exportLocalDatabase" description="Exports the script of the local database to file">
+		<echo message="Getting MySQL database struture" />
+		<exec executable="${mysql.mysqldump.exe}" spawn="false" dir="${mysql.dir}" output="${database.dir}localexport.sql">
+			<arg line="--database ${database.schema.local}"/>
+			<arg line="--tables"/>
+			<arg line="--host ${database.host.local}"/>
+			<arg line="--user ${database.username.local}"/>
+			<arg line="--password=${database.password.local}"/>
+			<arg line="--no-create-db" />
+		</exec>
+	</target>
+
+	<target name="exportProdDatabase" description="Exports the script of the prod database to file">
+		<echo message="Getting MySQL database struture" />
+		<exec executable="${mysql.mysqldump.exe}" spawn="false" dir="${mysql.dir}" output="${database.dir}prodexport.sql">
+			<arg line="--database ${database.schema.prod}"/>
+			<arg line="--tables"/>
+			<arg line="--host ${database.host.prod}"/>
+			<arg line="--user ${database.username.prod}"/>
+			<arg line="--password=${database.password.prod}"/>
+			<arg line="--no-create-db" />
+		</exec>
+	</target>
+
+	<target name="importProdToLocal" depends="exportProdDatabase" description="Imports the prod database locally">
+		<echo message="Importing entries into local" />
+		<exec executable="${mysql.mysql.exe}" spawn="false" dir="${mysql.dir}" input="${database.dir}prodexport.sql">
+			<arg line="--database ${database.schema.local}"/>
+			<arg line="--host ${database.host.local}"/>
+			<arg line="--user ${database.username.local}"/>
+			<arg line="--password=${database.password.local}"/>
+		</exec>
+	</target>
+
+	<!-- ****************************  -->
+	<!-- HTTP TASKS  -->
+	<!-- ****************************  -->
+	<target name="refreshApp">
+		<echo message="Reset application scope of app." />
+		<get src="${prod.url}/index.cfm?reset_app=true" dest="${log.dir}/appreset.log" />
+	</target>
+
+	<target name="refreshCache">
+		<echo message="Reset application scope of app." />
+		<get src="${prod.url}/index.cfm?reset_cache" dest="${log.dir}/cachereset.log" />
+	</target>
+	
+	<target name="refreshBlog">
+		<echo message="Reset application scope of blog." />
+		<get src="${prod.url}/blog/index.cfm?reset_app=true" dest="${log.dir}/blogreset.log" />
+	</target>
+	
+	<target name="flushServerCache">
+		<echo message="Reset template cache of a cf server." />
+		<get src="${prod.url}/cfc/remote/cache.cfc?method=clearCache" dest="${log.dir}/cacheflush.log" />
+	</target>
+	
+
+</project>	

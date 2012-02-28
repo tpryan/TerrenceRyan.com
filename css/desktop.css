@@ -1,0 +1,266 @@
+#content {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+#content p{
+	font-size: 20px;
+	word-wrap: break-word;
+}
+
+
+header > *, footer > *, #archives{
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+header img{
+}
+
+body.home{
+	padding-bottom: 0;
+	background-color: #000000;
+	background-image: url("bodybg.png");
+	background-repeat:repeat-y;
+}
+
+
+h1{
+	font-size: 2.2em;
+}
+
+
+header{
+	padding-bottom: 20px;
+}
+
+footer{
+	padding: 20px 0 20px 0;
+}
+
+
+.home header{
+	width: 350px;
+	height: 100%;
+	float: left;
+	
+}
+
+.home header p{
+	padding-bottom: 5px;
+	
+}
+
+.home footer{
+	
+	display: table-row;
+	clear: both;
+	width: 350px;
+	float: left;
+}
+
+.home footer p{
+	margin-left: 5px;
+	padding-bottom: 5px;
+	
+}
+
+.home footer nav ul{
+	margin-left: 5px;
+}
+
+#content p{
+	max-width: 900px;
+}
+
+.home #content{
+	
+	display:table;
+	padding-top: 20px;
+	height: 100%;
+	margin-bottom: -1500px;
+}
+
+
+#primarycontent, #secondarycontent{
+	display:table-row;
+}
+
+.pod{
+	display:table-cell;
+	padding-right: 40px;
+	padding-bottom: 40px;
+	width: 50%;
+}
+
+.externalref{
+	font-size: .8em;
+}
+
+h2{
+	margin-bottom: 10px;
+}
+
+#content h2{
+	font-size: 2.5em;
+
+}	
+
+header{
+	clear: both;
+}
+
+
+
+
+header hgroup h1{
+	display: table-cell;
+	padding-top: 5px;
+	width: 45%;
+	
+}
+
+
+header hgroup h2{
+	display: table-cell;
+	color: #FFFFFF;
+	font-variant: normal;
+	padding-top: 15px;
+	vertical-align: top;
+	width: 50%;
+	
+}
+
+header nav{
+	display: table-cell;
+	padding-top: 5px;
+	vertical-align: top;
+	text-align: right;
+	width: 5%;
+}
+
+header nav ul{
+	height: auto;
+}
+
+.home header hgroup h1{
+	display: block;
+	width: auto;
+	
+}
+
+
+.home header hgroup h2{
+	display: block;
+	width: auto;
+	
+}
+
+.home header nav{
+	display: block;
+}
+
+
+
+.home header hgroup h2{
+	float: none;
+	margin-left: 0;
+}
+
+header hgroup img{
+	float: right;
+}
+
+.home header hgroup img{
+	float: left;
+}
+
+body header img {
+	position: relative;
+}
+
+#archives{
+	
+} 
+
+#archives section{
+	display: table-cell;
+	width: 33%;
+}
+
+#content h2{
+	clear: both;
+}
+
+#about img{
+	margin-left: 5px;
+	float: right;
+}
+
+#info, #action{
+	display: table-cell;
+}
+
+#action{
+	padding-left: 20px;
+}
+
+
+
+#info {
+	padding-right: 20px;
+	border-right: 1px solid #FF0000;
+}
+
+#book #info img{
+	margin-left: 5px;
+	float: right;
+}
+
+#book #info{
+	width: 70%;
+}
+
+#job #adobelogo{
+	float:right;
+	margin-left: 5px;	
+}
+
+article header {
+	clear: both;
+	float: none;
+	height: auto;
+}
+
+
+#comment_form textarea{
+	width: 600px;
+}
+
+#comment_form input.text_input{
+	width: 370px;
+}
+
+
+
+#searchpage footer{
+	height: 100%;
+	
+}
+.pod{
+	padding-bottom: 0;
+	
+}
+
+.pod article{
+	padding-bottom: 0;
+}
+
+header nav ul li{
+	display: block;
+	float: none;
+}
+
+#job blockquote{
+	margin-right: 340px;
+}

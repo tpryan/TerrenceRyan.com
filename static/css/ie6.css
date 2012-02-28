@@ -1,0 +1,70 @@
+ul#navigation{
+	width: 600px;
+}
+
+.home #splash h2{
+	background: transparent url(welcome.png) no-repeat;
+	top: 128px;
+	right: 10px;
+	height: 64px;
+	width: 302px;
+	
+}
+
+.four_o_four #splash h2{
+	background: transparent url(404.png) no-repeat;
+	top: 133px;
+	right: 10px;
+	height: 59px;
+	width: 478px;
+	}
+
+.about #splash h2{
+	background: transparent url(aboutsplash.png) no-repeat;
+	top: 133px;
+	right: 10px;
+	height: 59px;
+	width: 214px;
+	}
+	
+.contact #splash h2{
+	background: transparent url(contactsplash.png) no-repeat;
+		top: 133px;
+	right: 10px;
+	height: 59px;
+	width: 294px;
+	}
+	
+.projects #splash h2{
+	background: transparent url(projectssplash.png) no-repeat;
+	top: 133px;
+	right: 10px;
+	height: 59px;
+	width: 294px;
+	}	
+.presentations #splash h2{
+	background: transparent url(presentationssplash.png) no-repeat;
+	top: 133px;
+	right: 10px;
+	height: 59px;
+	width: 454px;
+	}		
+	
+.blog #splash h2{
+	background: transparent url(blogsplash.png) no-repeat;
+	top: 133px;
+	right: 10px;
+	height: 59px;
+	width: 214px;
+	}	
+.error #splash h2{
+	background: transparent url(errorsplash.png) no-repeat;
+	top: 133px;
+	right: 10px;
+	height: 59px;
+	width: 214px;
+	}
+	
+.blurb{
+	padding-top: 30px;
+}	

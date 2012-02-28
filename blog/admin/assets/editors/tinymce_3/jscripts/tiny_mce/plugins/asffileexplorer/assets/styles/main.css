@@ -1,0 +1,255 @@
+/****************************************************************************************************************
+ *****************************************   MX COMPONENTS  *****************************************************
+*****************************************************************************************************************
+*/
+Application {
+   backgroundColor: #ffffff;
+   backgroundGradientAlphas: 0, 0;
+	fontFamily: "Lucida Grande";
+	color: #000000;
+	fontSize: 12;
+}
+
+DataGrid {
+	verticalGridLines: false;
+	 alternatingItemColors: #FFFFFF, #EDF3FE;
+}
+
+
+Panel {
+	paddingBottom: 10;
+	paddingLeft:10;
+	paddingRight:10;
+	paddingTop:10;	
+}
+
+
+HDividedBox {
+	paddingBottom:10;
+	paddingLeft:10;
+	paddingRight:10;
+	paddingTop:10;
+}
+
+Button {
+	cornerRadius:7;
+	borderStyle:solid;
+	borderColor:#b0b0b0;
+	fillColors:#ffffff,#ffe894, #ffffff,#fffad4;
+	fillAlphas: 1, 1;
+}
+
+Label {
+	fontSize:12;
+	fontFamily:Arial;
+	color:#000000;
+}
+
+
+LinkButton {
+	cornerRadius:0;
+	color:#666666;
+	fillColors:#ffffff,#ffe894, #ffffff,#fffad4;
+	fillAlphas: 1, 1;
+	fontFamily: "Lucida Grande";
+	color:#000000;
+	fontSize: 12;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------
+                                              MX COMPONENTS  Classes                                            *
+................................................................................................................*/
+
+
+
+/****************************************************************************************************************
+ ******************************************   COMMON Classes  ****************************************************
+*****************************************************************************************************************
+*/
+
+.title {
+	fontSize: 20;
+	fontFamily: "Lucida Grande";
+	color: #000000;
+}
+
+.errorDrawer {
+	backgroundColor:#CA3B04;
+}
+
+.infoDrawer {
+	backgroundColor:#79BA63;
+}
+
+.messageText {
+	color:#FFFFFF;
+	horizontalCenter:0;
+	paddingBottom:5;
+	paddingLeft:10;
+	paddingRight:10;
+	paddingTop:5;
+	textAlign:center;
+	verticalCenter:0;
+}
+
+
+/****************************************************************************************************************
+ ******************************************   VIEWS  ************************************************************
+*****************************************************************************************************************
+*/
+
+
+MainUI {
+	paddingTop: 15;
+	paddingRight: 15;
+	paddingLeft: 15;
+	paddingBottom: 15;
+}
+
+/*---------------------------------------------------------------------------------------------------------------
+                                             Login Classes                                                      *
+................................................................................................................*/
+
+.loginTitle {
+	fontSize: 15;
+	fontStyle: italic;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------
+                                             MainUI Classes                                                      *
+................................................................................................................*/
+.newButton {
+	icon:Embed(source="../images/add.png");	
+}
+
+
+
+.panelContainer{ 
+	verticalGap: 15;	
+}
+
+.compressPanel {
+	borderSkin: ClassReference( 'com.asfusion.skins.BoxModel' );
+	filters: dropShadow;
+
+	borderStyle: solid;
+	borderColor: #ADBEFF;
+	backgroundColor: #ffffff,#f4f4f4;
+
+	paddingTop:10;
+	paddingRight:10;
+	paddingBottom:10;
+	paddingLeft:10;
+}
+
+/*---------------------------------------------------------------------------------------------------------------
+                                             Directories Panel Classes                                           
+................................................................................................................*/
+
+.trashSection {
+	borderSkin:ClassReference( 'com.asfusion.skins.BoxModel' );
+
+	cornerRadius:9;
+
+	borderStyle: solid;
+	borderColor: #b0b0b0;
+	backgroundColor: #fffad4,#ffffff;
+
+	paddingTop:10;
+	paddingRight:10;
+	paddingBottom:10;
+	paddingLeft:10;
+}
+
+.uploadSection {
+	borderSkin:ClassReference( 'com.asfusion.skins.BoxModel' );
+
+	cornerRadius:9;
+		 
+	borderStyle:solid;
+	borderColor:#b0b0b0;
+	backgroundColor:#ffffff,#ffe894;
+
+	paddingTop:10;
+	paddingRight:10;
+	paddingBottom:10;
+	paddingLeft:10;
+}
+
+.uploadSectionOver {
+	borderSkin:ClassReference( 'com.asfusion.skins.BoxModel' );
+
+	cornerRadius:9;
+		 
+	borderStyle:solid;
+	borderColor:#b0b0b0;
+	backgroundColor:#ffffff,#fffad4;
+
+	paddingTop:10;
+	paddingRight:10;
+	paddingBottom:10;
+	paddingLeft:10;
+}
+
+
+.uploadProgress {
+	borderSkin:ClassReference( 'com.asfusion.skins.BoxModel' );
+	cornerRadius:9;	
+
+	borderStyle:solid;
+	borderColor:#b0b0b0;
+	backgroundColor:#ffffff;
+
+	paddingTop:20;
+	paddingRight:10;
+	paddingBottom:10;
+	paddingLeft:10;
+}
+
+
+
+/****************************************************************************************************************
+ *****************************************   CUSTOM COMPONENTS  *************************************************
+*****************************************************************************************************************
+*/
+
+/*---------------------------------------------------------------------------------------------------------------
+                                             CUSTOM COMPONENTS Classes                                          *
+................................................................................................................*/
+
+
+
+/****************************************************************************************************************
+ ******************************************   RENDERERS  ********************************************************
+*****************************************************************************************************************
+*/
+
+/*----------------------------------------------------------------------------------------------------------------
+                                             RENDERERS  CLASES                                                  *
+*----------------------------------------------------------------------------------------------------------------
+*/
+
+/****************************************************************************************************************
+ ***********************************************   FONTS  *******************************************************
+*****************************************************************************************************************
+*/
+
+@font-face {
+   src:url("../fonts/lucidaGrande.swf");
+   fontFamily: "Lucida Grande";
+}
+
+/****************************************************************************************************************
+                                             Filters                                                            *
+*****************************************************************************************************************
+*/
+.dropShadow{
+	filterClass:ClassReference('com.asfusion.skins.filters.CSSDropShadowFilter');
+	distance: 2;
+	blurX: 5;
+	blurY: 5;
+	quality:3;
+	alpha: 0.5;
+}

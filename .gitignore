@@ -1,0 +1,14 @@
+
+.DS_Store
+
+.project
+
+config/prod/coldspring.xml.cfm
+
+config/local/coldspring.xml.cfm
+
+log/appreset.log
+
+settings.properties
+
+settings.old.properties

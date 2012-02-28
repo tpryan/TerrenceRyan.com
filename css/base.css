@@ -1,0 +1,373 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: warnock-pro, "Sabon LT Std", Georgia, "Times New Roman", Times, serif;
+}
+
+header, footer{
+	background-color: #000000;
+}
+
+
+h1{
+	margin: 0;
+	font-weight: 400;
+	font-family: league-gothic,"Gill Sans", "Helvetica","Arial", sans-serif;
+	font-size: 3em;
+}
+
+.wf-active h1{
+	font-size: 4em;
+}
+
+h2{
+	margin: 0;
+	font-weight: 400;
+	font-family: league-gothic,"Gill Sans", "Helvetica","Arial", sans-serif;
+	font-variant:small-caps;
+}
+
+header hgroup h2{
+	color: #FFFFFF;
+	font-variant: normal;
+}
+
+
+h3	{
+	margin: 0;
+	font-family: league-gothic,"Gill Sans", "Helvetica","Arial", sans-serif;
+	font-weight: 400;
+	
+}
+.wf-active h3{
+	font-size: 1.5em;
+}
+
+
+
+header p{
+	color: #FFFFFF;
+	font-family: league-gothic,"Gill Sans", "Helvetica","Arial", sans-serif;
+	font-weight: 300;
+	margin-top: 0;
+}
+
+header nav{
+	font-family: league-gothic,"Gill Sans", "Helvetica","Arial", sans-serif;
+}
+
+.wf-active header nav{
+	font-size: 120%;
+}
+
+footer p{
+	color: #FFFFFF;
+	clear: both;
+}
+
+a{
+	-webkit-transition: color .5s ease-in;
+	-moz-transition: color .5s ease-in;
+	-ms-transition: color .5s ease-in;
+	transition: color .5s ease-in;
+}
+
+a:link{
+	color: #FF0000; text-decoration: none;
+}
+
+a:visited{
+	color: #FF0000; text-decoration: none;
+}
+
+a:hover{
+	color: #555555;text-decoration:underline;
+}
+
+a:active{
+	color: #FF0000;text-decoration:underline;
+}
+
+header a{
+	-webkit-transition: color .5s ease-in;
+	-moz-transition: color .5s ease-in;
+	-ms-transition: color .5s ease-in;
+	transition: color .5s ease-in;
+}
+
+header a:link{
+	color: #FF0000; text-decoration: none;
+}
+
+header a:visited{
+	color: #FF0000; text-decoration: none;
+}
+
+header a:hover{
+	color: #CCCCCC;text-decoration:underline;
+}
+
+header a:active{
+	color: #CCCCCC;text-decoration:underline;
+}
+
+#content{
+	background-color: #FFFFFF;
+}
+
+#content h2 a{
+	-webkit-transition: color .5s ease-in;
+	-moz-transition: color .5s ease-in;
+	-ms-transition: color .5s ease-in;
+	transition: color .5s ease-in;
+}
+
+#content h2 a:link{
+	color: #000000;
+}
+#content h2 a:visited{
+	color: #000000;
+}
+#content h2 a:hover{
+	color: #FF0000;
+	text-decoration:underline;
+}
+#content h2 a:active{
+	color: #000000;
+	text-decoration:underline;
+}
+
+#content p{
+	margin: 0;
+}
+
+
+header, footer, #content, #archives{
+	padding: 0 10px 3px 10px;
+}
+
+footer nav ul{
+	padding: 0 0 20px 0;
+	margin: 0;
+	float: left;
+}
+footer nav li {
+	float: left;
+	clear: both;	
+}
+
+.item{ 
+	padding-bottom: 10px;	
+}
+
+div#content > div{
+	padding-bottom: 20px;
+}
+
+
+footer{
+	font-family: league-gothic,"Gill Sans", "Helvetica","Arial", sans-serif;
+	font-weight: 300;
+}
+
+.wf-active footer{
+	font-size: 120%;
+}
+
+footer nav ul{
+	list-style: none;
+}
+
+blockquote{
+	font-style: italic;
+	background-color: #ccc;
+	padding: 5px;
+	border: 1px solid #FF0000;
+	margin: 0 15px 10px 15px;
+	
+	-moz-border-radius: 5px;  
+	-webkit-border-radius: 5px;  
+	border-radius: 5px; 	
+}
+
+.externalref{
+	text-align: right;
+	font-style:italic;
+}
+
+a img {
+	border: 1px solid #ff0000;
+}
+
+#disclaimer{
+	font-style:italic;
+}
+
+article{
+	padding: 0 0px;
+}
+
+article header{
+	background-color: #FFFFFF;
+	padding: 0;
+	color: #000000;
+}
+
+article footer{
+	background-color: #FFFFFF;
+	padding: 0;
+	color: #000000;
+}
+
+article footer p{
+	color: #000000;
+}
+
+article header h1{
+	font-size: 2.5em;
+	padding: 0;
+}
+
+article aside{
+	font-style: italic;
+	border: 1px dotted #ff0000;
+	background-color: #F0f0f0;
+	padding: 5px;
+	-moz-border-radius: 5px;  
+	-webkit-border-radius: 5px;  
+	border-radius: 5px;
+	margin: 0 0 10px 0; 
+}
+
+#content p{
+	padding-bottom: 15px;
+}
+
+
+article footer{
+	color: #000000;
+	font-family: warnock-pro, "Sabon LT Std", Georgia, "Times New Roman", Times, serif;
+}
+
+article .related ul{
+	padding: 0 0 15px 0;
+	margin: 0 0 0 20px;
+}
+
+#archives ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+#categories a img{
+	border: none;
+}
+
+
+
+body header img{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+body.home header img {
+	position: relative;
+} 
+
+.about img{
+	border: 1px solid #FF0000;
+}
+
+
+
+#content ul#comment_list {
+	overflow: hidden;
+	padding-left: 0;
+}
+
+#comment_list .comment_num{
+	font-size: 78px;
+	float: left;
+	margin: 0 5px 5px 0px;
+	padding-top: 5px;
+	line-height: .7;
+}
+
+
+
+#comment_list .comment_num a{
+	text-decoration: none;
+}
+
+#comment_list .comment_num a:link{
+	color: #FFF;
+}
+#comment_list .comment_num a{color: #000000;}
+#comment_list .comment_num a:link{color: #000000;}
+#comment_list .comment_num a:visited{color: #000000;}
+#comment_list .comment_num a:hover{color: #000000;}
+#comment_list .comment_num a:active	{color: #000000;}
+
+#comment_list div.author .comment_num, #comment_list li.author .comment_num a{
+	color: #CCC;
+}
+
+.comment{
+	-moz-border-radius: 5px;  
+	-webkit-border-radius: 5px;  
+	border-radius: 5px; 
+}
+
+li.comment{
+	margin-bottom: 10px;
+	padding: 5px 5px 5px 5px;
+	float: left;
+	border: 1px solid #CCC;
+	width: 95%;
+	background-color: #F0f0f0;
+	list-style: none;
+}
+
+
+li.comment p{
+	padding: 0;
+	margin: 0;
+}
+
+li.author{
+	border: 1px solid #076FA2;
+	background-color: #FF0000;
+}
+
+li.author a{
+	color: #FFFFFF;
+}
+
+header nav ul{
+	margin-top: 0;
+	font-weight: 300;
+	padding-left: 0;
+	margin-left: 0;
+	padding-top: 10px;
+	list-style: none;
+	height: 15px;
+}
+
+header nav ul li{
+	display: block;
+	float: left;
+	padding-right: 20px;
+}
+
+#disclaimer{
+	padding-top: 20px;
+	font-family: warnock-pro, "Sabon LT Std", Georgia, "Times New Roman", Times, serif;
+}
+
+#action ul{
+	padding-left: 25px;
+}
+
+#action a img{
+	border: none;
+}

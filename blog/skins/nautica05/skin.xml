@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin id="nautica05" name="Nautica 05" version="1.5" provider-name="AsFusion" lastModified="2008-06-10">
+	<description>Design based on Nautica 05 by Studio7designs. This skin includes 2 extra header images.
+	You can find them in the skins/nautica05/assets/images/bg directory. They are named header_image_2.jpg and header_image_3.jpg.
+	If you want to use them, you can rename one of them to header_image.jpg and rename the current header_image.jpg to some other name.
+	Refresh your browser (you may also need to clean your browser's cache) to see it. </description>
+	<url></url>
+	<author>AsFusion</author>
+	<authorUrl>http://www.asfusion.com</authorUrl>
+	<designAuthor>Studio7designs</designAuthor>
+	<designAuthorUrl>http://studio7designs.com/</designAuthorUrl>
+	<thumbnail>assets/images/skin_thumbnail.png</thumbnail>
+	<preview>http://www.mangoblog.org/themes/preview/nautica05</preview>
+	<requiresVersion match="greaterOrEqual">1.1</requiresVersion>
+	<adminEditorCss>assets/styles/adminEditor.css</adminEditorCss>
+	<license>Creative Commons Attribution v2.5</license>
+	<pageTemplates></pageTemplates>
+	<podLocations>
+		<location id="sidebar" name="Sidebar">
+			<!-- template pods defined in the skin -->
+			<pod id="categories">Categories</pod>
+			<pod id="monthly-archives">Archives (monthly)</pod>
+			<pod id="search">Search</pod>
+			<pod id="links-by-category">Links by category</pod>
+			<!-- <pod id="category-cloud">Category Cloud</pod> -->
+		</location>
+		<location id="sidebar-page" name="Page Sidebar">
+			<!-- template pods defined in the skin -->
+			<pod id="page-menu">Page Navigation</pod>
+		</location>
+	</podLocations>
+</skin>

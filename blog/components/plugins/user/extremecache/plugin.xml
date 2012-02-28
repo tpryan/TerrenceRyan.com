@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.asfusion.mango.plugins.extremecache" name="Extreme Cache" version="1.0" provider-name="AsFusion"
+ class="extremecache.Handler">
+<description>Caches all blog pages for fast performance</description>
+<requiresVersion match="greaterOrEqual">1.1</requiresVersion>
+  <listens>
+	<event name="beforePageTemplate" type="synch" priority="10" />
+  	<event name="beforeIndexTemplate" type="synch" priority="10" />
+  	<event name="beforePostTemplate" type="synch" priority="10" />
+  	<event name="afterPageAdd" type="asynch" priority="5" />
+	<event name="afterPageUpdate" type="asynch" priority="5" />
+	<event name="afterPageDelete" type="asynch" priority="5" />
+	<event name="afterCommentAdd" type="asynch" priority="5" />
+	<event name="afterCommentDelete" type="asynch" priority="5" />
+	<event name="afterPostAdd" type="asynch" priority="5" />
+	<event name="afterPostUpdate" type="asynch" priority="5" />
+	<event name="afterPostDelete" type="asynch" priority="5" />
+	<event name="extremecache-cacheIndex" type="asynch" priority="5" />
+	<event name="extremecache-cachePage" type="asynch" priority="5" />
+	<event name="extremecache-softCacheIndex" type="asynch" priority="5" />
+	<event name="extremecache-softCachePage" type="asynch" priority="5" />
+  </listens>
+  
+   <listensAdmin>
+		<event name="settingsNav" type="synch" priority="5" />
+  </listensAdmin>
+</plugin>

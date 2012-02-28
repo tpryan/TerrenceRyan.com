@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Licensed under the Creative Commons License, Version 3.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	http://creativecommons.org/licenses/by-sa/3.0/us/
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+	Created By Russell Brown : EmpireGP Servces
+	http://www.EmpireGPServices.com
+-->
+
+<plugin 
+	id="com.empiregpservices.mangoplugins.egps_colorcoding" 
+	name="EGPS Color Coding" 
+	version="1.0.8" 
+	provider-name="EmpireGP Services" 
+	class="egps_colorcoding.Colorer"
+>
+
+	<description><![CDATA[
+		Format and colorize your code for better display. Currently supporting general HTML, ColdFusion and ActionScript.<br><br>
+		In design mode, simply wrap your code output with the followign styles<br>
+		<ul>
+			<li>&lt;code&gt;&lt;/code&gt;</li>
+			<li>&lt;code class="as3"&gt;&lt;/code&gt;</li>
+			<li>&lt;code class="coldfusion"&gt;&lt;/code&gt;</li>
+			<li>&lt;code class="mxml"&gt;&lt;/code&gt;</li>
+		</ul>
+		
+		More information and updates may be found on my blog <a href="http://www.EmpireGPServices.com/blog">Russell Brown (EmpireGP Services)</a>
+	]]></description>
+
+	<requiresVersion match="greaterOrEqual">1.0</requiresVersion>
+	
+	<listens>
+		<event name="postGetContent" type="synch" priority="7" />
+		<event name="postGetExcerpt" type="synch" priority="7" />
+		<event name="commentGetContent" type="synch" priority="7" />
+		<event name="beforeHtmlHeadEnd" type="synch" priority="5" />
+	</listens>
+</plugin>
