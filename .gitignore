@@ -12,3 +12,13 @@ log/appreset.log
 settings.properties
 
 settings.old.properties
+
+log/blogreset.log
+
+log/cacheflush.log
+
+.gitignore
+
+.gitignore
+
+log/cachereset.log
