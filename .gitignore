@@ -22,3 +22,5 @@ log/cacheflush.log
 .gitignore
 
 log/cachereset.log
+
+sql/prodexport.sql
