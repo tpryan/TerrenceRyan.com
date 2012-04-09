@@ -20,8 +20,10 @@
 			for (i=1; i<=ArrayLen(content); i++){
 				
 				var start = content[i].dtstart.data;
+				start = getToken(start,1 ,"T");
 				var startDate = CreateDate(left(start,4), mid(start,5,2) , right(start,2));
 				var end = content[i].dtend.data;
+				end = getToken(end,1 ,"T");
 				var endDate = CreateDate(left(end,4), mid(end,5,2) , right(end,2));	
 						
 				QueryAddRow(results);
