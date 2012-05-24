@@ -18,13 +18,14 @@
 			<h2><a href="http://lanyrd.com/profile/tpryan/">I Speak</a></h2>
 			<cf_appearances count="#appearanceCount#" />
 			<p class="externalref">View more on <a href="http://lanyrd.com/profile/tpryan/">lanyrd.com</a></p>
-			
-			<cfif actualEventCount lt blogCount> 
+		</div>
+		<cfif actualEventCount lt blogCount> 
+		<div id="events" class="pod">
 				<h2><a href="http://twitter.com/tpryan">I Tweet</a></h2>
 				<cf_twitter count="1" />
 				<p class="externalref">Follow me on <a href="http://twitter.com/tpryan">twitter.com</a></p>
-			</cfif>
 		</div>
+		</cfif>
 		
 	</div>
 

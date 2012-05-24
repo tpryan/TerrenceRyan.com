@@ -19,8 +19,18 @@
 			Also the author of <a href="/book">Driving Technical Change</a>
 		</h2>
 		<cfif attributes.showBigPictures>
-		<a href="/about"><img src="/headshot.jpg" width="160" height="230" alt="Headshot of Terrence Ryan" /></a>
-		<a href="/book"><img src="/book.jpg" width="160" height="230" alt="Cover of Driving Technical Change" /></a>
+		<h2 class="homenav">
+			<a href="/about">
+				<img src="/headshot.jpg" width="160" height="230" alt="Headshot of Terrence Ryan" />
+				<span>About Me</span>
+			</a>
+		</h2>
+		<h2 class="homenav">
+			<a href="/book">
+				<img src="/book.jpg" width="160" height="230" alt="Cover of Driving Technical Change" />
+			</a>
+		</h2>
+		
 		</cfif>
 		<cfif attributes.showLittlePicture>
 		<a href="/about"><img src="/headshot.png" width="55" height="80" alt="Headshot of Terrence Ryan" /></a>

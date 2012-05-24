@@ -8,8 +8,8 @@
 <meta charset="utf-8" />
 <cfoutput><title>#attributes.title#</title></cfoutput>
 <meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" href="/css/base.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="/css/desktop.css" type="text/css" media="screen and (min-width: 768px) and (min-device-width: 768px)" />
+<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/css/extended.css" type="text/css" media="screen and (min-width: 768px) and (min-device-width: 768px)" />
 <link rel="alternate" type="application/rss+xml" title="RSS Feeds" href="http://feeds.feedburner.com/Terrenceryan" />
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/api" />
 <link rel="shortcut icon" href="/favicon.ico" />
