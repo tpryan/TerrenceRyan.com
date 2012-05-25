@@ -1,7 +1,9 @@
 @import 'all';
+
 $body_font_family: warnock-pro, "Sabon LT Std", Georgia, "Times New Roman", Times, serif;
 $heading_font_family: league-gothic,"Gill Sans", "Helvetica","Arial", sans-serif;
 $heading_font_weight: 400;
+
 
 body{
 	margin: 0;
@@ -13,16 +15,15 @@ header, footer{
 	background-color: #000000;
 }
 
-
 h1{
 	
 	font-family: $heading_font_family;
 	font-weight: $heading_font_weight;
-	font-size: 2.5em;
+	font-size: 2.2em;
 	margin: 0;
 
 	.wf-active &{
-		font-size: 3.5em;
+		font-size: 3.2em;
 	}
 
 	#blogpost & {
@@ -35,18 +36,16 @@ h1{
 
 }
 
-
-
 h2{
 	
 	font-family: $heading_font_family;
 	font-weight: $heading_font_weight;
 	font-variant: small-caps;
 	margin: 0;
-	font-size: 1.2em;
+	font-size: 1em;
 
 	.wf-active &{
-		font-size: 1.7em;
+		font-size: 1.4em;
 	}
 
 	body#blogpost & {
@@ -54,7 +53,7 @@ h2{
 	}
 
 	html.wf-active body#blogpost & {
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 
 }
@@ -95,6 +94,13 @@ header{
 	hgroup h2{
 		color: #FFFFFF;
 		font-variant: normal;
+		font-family: $body_font_family;
+		font-weight: normal;
+		line-height: 1.1;
+
+		.wf-active &{
+			font-size: 1.1em;
+		}
 
 		&.homenav{
 			display: inline;
@@ -111,6 +117,7 @@ header{
 
 	nav{
 		font-family: $heading_font_family;
+		font-weight: $heading_font_weight;
 
 		.wf-active &{
 			font-size: 120%;
@@ -118,7 +125,6 @@ header{
 
 		ul{
 			margin-top: 0;
-			font-weight: $heading_font_weight;
 			padding-left: 0;
 			margin-left: 0;
 			padding-top: 10px;
@@ -222,6 +228,7 @@ blockquote{
 		margin: 0;
 		padding-bottom: 15px;
 	}
+
 }
 
 #disclaimer{
@@ -289,8 +296,8 @@ article{
 		margin: 0 0 0 20px;
 	}
 
-	img{
-		max-width: 100%;
+	img, iframe, object, video{
+		max-width: 100% !important;
 	}
 
 }
@@ -346,8 +353,6 @@ li.author{
 	}
 }
 
-
-
 .item{ 
 	padding-bottom: 10px;	
 }
@@ -373,3 +378,6 @@ li.author{
 	border: none;
 }
 
+@media screen and (min-width: 768px) and (min-device-width: 768px) {
+  @import 'extended';
+} 

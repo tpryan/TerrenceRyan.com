@@ -12,7 +12,7 @@
 	</nav>
 	<p id="copyright">Copyright 2008 - 2012 Terrence Ryan</p>
 	<p id="disclaimer">This is a personal blog. While Adobe paying my salary might 
-	not make me completely  objective, the opinions expressed here are mine and not their's.</p>
+	not make me completely  objective, the opinions expressed here are mine and not theirs.</p>
 </footer>
 </cfif>
 </cfprocessingdirective>

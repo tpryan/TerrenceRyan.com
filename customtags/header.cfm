@@ -15,7 +15,7 @@
 	<hgroup>
 		<h1><a href="/">TerrenceRyan.com</a></h1>
 		<h2>I'm a <cfoutput>#age#</cfoutput> year old redhead geek from Philly. <br /> 
-			I'm currently a Developer Evangelist for <a href="/job">Adobe</a>.</br>
+			I'm currently an Evangelist for <a href="/job">Adobe</a>.</br>
 			Also the author of <a href="/book">Driving Technical Change</a>
 		</h2>
 		<cfif attributes.showBigPictures>
