@@ -13,7 +13,7 @@
 			<div id="disclaimerpad">
 			<blockquote id="disclaimer"><p>This is a personal blog. While Adobe paying my salary 
 			might not make me completely objective, the opinions 
-			expressed here are mine and not their's.</p> </blockquote>
+			expressed here are mine and not theirs.</p> </blockquote>
 			</div>
 			
 			<p>My major goal is to help developers using Adobe technologies to be successful. Hopefully they'll be using 
